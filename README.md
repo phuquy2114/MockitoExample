@@ -2,12 +2,12 @@
 
 Recommended way of getting Mockito is declaring a dependency on “mockito-core” library using your favorite build system. With Gradle one can do:
 
-'
+<pre>
 repositories {
         jcenter()
         }
 dependencies { testCompile "org.mockito:mockito-core:2.+" }
-'
+</pre>
 
 Maven users can declare a dependency on mockito-core. Mockito is automatically published to Bintray’s jcenter and synced to the Maven Central Repository.
 
