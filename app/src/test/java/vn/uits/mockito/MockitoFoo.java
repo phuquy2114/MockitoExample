@@ -3,9 +3,11 @@ package vn.uits.mockito;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnit;
+import org.mockito.junit.MockitoJUnitRunner;
 import org.mockito.junit.MockitoRule;
 
 import java.util.ArrayList;
@@ -20,7 +22,7 @@ import static org.mockito.Mockito.when;
  * Copyright © 2017 BAP CO., LTD
  * Created by PHUQUY on 2/26/18.
  */
-
+@RunWith(MockitoJUnitRunner.class)
 public class MockitoFoo {
 
     // instance
@@ -73,7 +75,12 @@ public class MockitoFoo {
         mockedList.add("foo");
         List spy = Mockito.spy(mockedList);
 
-// Impossible: real method is called so spy.get(0) throws IndexOutOfBoundsException (the list is yet empty)
+        // Impossible: real method is called so spy.get(0) throws IndexOutOfBoundsException (the list is yet empty)
         when(spy.get(0)).thenReturn("foo");
+    }
+
+    @Test
+    public void testFunc() {
+        Bar bar = new Bar();
     }
 }
